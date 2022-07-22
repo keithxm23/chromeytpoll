@@ -87,7 +87,7 @@ function startApp(){
   this.style.display = 'none';
 
   var running_status = true;
-  var show_non_move = false;
+  var show_non_move = true;
   console.log('started..');
   var move_data = {}; //FORMAT: {{'author':author1, 'move':move1}, ...};
   var mdata_by_move = {}; //FORMAT {'move1':['author1', 'author2'], 'move2':['author3'],...}
@@ -289,15 +289,15 @@ function startApp(){
   //SHOW/HIDE NON-CHESS MOVES BUTTON LOGIC
   let chessBtn = document.createElement("button");
   chessBtn.setAttribute('id','chessBtn');
-  chessBtn.textContent = 'Show non-move chat';
+  chessBtn.textContent = 'Show only moves';
   btnDiv = document.querySelector("#startDiv");
   btnDiv.append(chessBtn);
   chessBtn.addEventListener("click", function() {
     if (show_non_move){
-      chessBtn.textContent = 'Show non-move chat';
+      chessBtn.textContent = 'Show all chats';
       show_non_move=false;
     }else{
-      chessBtn.textContent = 'Hide non-move chat';
+      chessBtn.textContent = 'Show only moves';
       show_non_move=true;
     }
     
